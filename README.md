@@ -1,28 +1,22 @@
-# NODE-PING
+# pinguin
 
-a ping wrapper for nodejs
+Just another ping wrapper for nodejs.
 
-@last-modified: 2016-10-21 12:43
+## Motivation
 
-# LICENSE MIT
+Actually, pinguin is a fork of [node-ping](https://github.com/danielzzz/node-ping). It's awesome, but maintenance of this package leaves much to be desired. Usually, they merge PRs very rarely. Moreover, this package doesn't support NodeJS standard events mechanism. For now, `pinguin` is fully equaled the source package.
 
-(C) Daniel Zelisko
+## Installation
 
-http://github.com/danielzzz/node-ping
+```bash
+npm install pinguin
+```
 
-# DESCRIPTION
-
-node-ping is a simple wrapper for the system ping utility
-
-# INSTALLATION
-
-npm install ping
-
-# USAGE
+## Usage
 
 Below are examples extracted from `examples`
 
-## Tradition calls
+### Tradition calls
 
 ```js
 var ping = require('ping');
@@ -36,7 +30,7 @@ hosts.forEach(function(host){
 });
 ```
 
-## Tradition calls with configuration
+### Tradition calls with configuration
 
 ```js
 var cfg = {
@@ -53,7 +47,7 @@ hosts.forEach(function(host){
 });
 ```
 
-## Promise wrapper
+### Promise wrapper
 
 ```js
 var ping = require('ping');
@@ -68,7 +62,7 @@ hosts.forEach(function (host) {
 });
 ```
 
-## Promise Wrapper with configable ping options
+### Promise Wrapper with configable ping options
 
 ```js
 hosts.forEach(function (host) {
@@ -129,21 +123,3 @@ Below is the possible configuration
  */
 ```
 
-#### Note
-
-* Since `ping` in this module relies on the `ping` from underlying platform,
-arguments in `PingConfig.extra` will definitely be varied across different
-platforms.
-
-* However, `numeric`, `timeout` and `min_reply` have been abstracted. Values for
-them are expected to be cross platform.
-
-* By setting `numeric`, `timeout` or `min_reply` to false, you can run `ping`
-without corresponding arguments.
-
-# Contributing
-
-Before opening a pull request please make sure your changes follow the
-[contribution guidelines][1].
-
-[1]: https://github.com/danielzzz/node-ping/blob/master/CONTRIBUTING.md
